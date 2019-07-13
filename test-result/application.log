@@ -1,0 +1,10 @@
+13 七月 2019 20:37:11,409 INFO  ~ Starting D:\play-workspace\yabe
+13 七月 2019 20:37:11,680 INFO  ~ Module docviewer is available (D:\JetBrains\IDEA\play-1.5.3\play-1.5.3\modules\docviewer)
+13 七月 2019 20:37:12,328 WARN  ~ You're running Play! in DEV mode
+13 七月 2019 20:37:12,469 INFO  ~ Listening for HTTP on port 9000 (Waiting a first request to start) ...
+13 七月 2019 20:37:16,052 INFO  ~ HikariPool-1 - Starting...
+13 七月 2019 20:37:16,073 INFO  ~ HikariPool-1 - Start completed.
+13 七月 2019 20:37:16,087 INFO  ~ Connected to jdbc:h2:mem:play for default
+13 七月 2019 20:37:17,682 INFO  ~ Application 'Yet Another Blog Engine' is now started !
+13 七月 2019 20:39:28,747 INFO  ~ Restart: 2 classes changed, caused by: java.lang.UnsupportedOperationException: class redefinition failed: attempted to add a method
+13 七月 2019 20:43:16,768 INFO  ~ Restart: 1 classes changed, caused by: java.lang.UnsupportedOperationException: class redefinition failed: attempted to add a method
