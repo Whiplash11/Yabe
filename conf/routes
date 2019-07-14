@@ -13,3 +13,6 @@ GET     /public/                                staticDir:public
 
 # Catch all
 *       /{controller}/{action}                  {controller}.{action}
+GET     /post/{id}                              Application.show
+
+POST    /posts/{postId}/comments                Application.postComment

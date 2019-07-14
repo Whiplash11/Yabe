@@ -33,5 +33,13 @@ public class Post extends Model {
         this.save();
         return this;
     }
+    //上一页
+    public Post previous(){
+        return Post.find("postedAt < ?1 order by postedAt desc",postedAt).first();
+    }
 
+    //下一页
+    public Post next(){
+        return Post.find("postedAt > ?1 order by postedAt asc",postedAt).first();
+    }
 }
