@@ -16,3 +16,5 @@ GET     /public/                                staticDir:public
 GET     /post/{id}                              Application.show
 
 POST    /posts/{postId}/comments                Application.postComment
+
+GET     /captcha                                Application.captcha
