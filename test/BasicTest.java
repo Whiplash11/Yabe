@@ -8,7 +8,7 @@ import play.test.*;
 public class BasicTest extends UnitTest {
     @Before
     public void setup() {
-        Fixtures.deleteDatabase();
+        Fixtures.deleteDatabase();//帮助你处理你的数据库，并注入测试数据
     }
     @Test
     public void aVeryImportantThingToTest() {

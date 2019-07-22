@@ -2,8 +2,8 @@ package models;
 
 import java.util.*;
 
-import net.sf.oval.constraint.*;
-import play.data.validation.Required;
+import net.sf.oval.constraint.Email;
+import play.data.validation.*;
 import play.db.jpa.Model;
 
 import javax.persistence.*;
@@ -13,11 +13,15 @@ public class User extends Model {
 
     @Email
     @Required
+
     public String email;
 
     @Required
+    @MaxSize(1000)
     public String password;
 
+    @Required
+    @MinSize(8)
     public String fullname;
     public boolean isAdmin;
 

@@ -2,6 +2,9 @@
 <module relativePaths="true" type="JAVA_MODULE" version="4">
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
+    <content url="file://D:/JetBrains/IDEA/play-1.5.3/play-1.5.3/modules/crud">
+      <sourceFolder url="file://D:/JetBrains/IDEA/play-1.5.3/play-1.5.3/modules/crud/app" isTestSource="false" />
+    </content>
     <content url="file://D:/JetBrains/IDEA/play-1.5.3/play-1.5.3/modules/docviewer">
       <sourceFolder url="file://D:/JetBrains/IDEA/play-1.5.3/play-1.5.3/modules/docviewer/app" isTestSource="false" />
     </content>
@@ -12,7 +15,7 @@
     <orderEntry type="jdk" jdkName="1.8" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="inheritedJdk" />
-    <orderEntry type="module-library" exported="">
+    <orderEntry type="module-library">
       <library name="Project Libraries">
         <CLASSES>
           <root url="file://$MODULE_DIR$/lib" />
@@ -26,7 +29,7 @@
         <jarDirectory url="file://$MODULE_DIR$/lib" recursive="false" />
       </library>
     </orderEntry>
-    <orderEntry type="module-library" exported="">
+    <orderEntry type="module-library">
       <library name="PlayFramework Dependencies">
         <CLASSES>
           <root url="file://D:/JetBrains/IDEA/play-1.5.3/play-1.5.3/framework/lib" />
@@ -36,7 +39,7 @@
         <jarDirectory url="file://D:/JetBrains/IDEA/play-1.5.3/play-1.5.3/framework/lib" recursive="false" />
       </library>
     </orderEntry>
-    <orderEntry type="module-library" exported="">
+    <orderEntry type="module-library">
       <library>
         <CLASSES>
           <root url="jar://D:/JetBrains/IDEA/play-1.5.3/play-1.5.3/framework/play-1.5.3.jar!/" />
@@ -47,6 +50,5 @@
         </SOURCES>
       </library>
     </orderEntry>
-    <orderEntry type="library" exported="" name="play-testrunner" level="project" />
   </component>
 </module>
