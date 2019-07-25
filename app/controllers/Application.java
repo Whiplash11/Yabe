@@ -30,6 +30,7 @@ public class Application extends Controller {
         render(post);
     }
 
+
     public static void postComment(
             Long postId,
             @Required (message = "Author is required")String author,

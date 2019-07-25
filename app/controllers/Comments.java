@@ -1,4 +1,8 @@
 package controllers;
 
-public class Comments extends CRUD {
+import play.mvc.With;
+
+@Check("admin")
+@With(Secure.class)
+public class Comments extends CRUD{
 }

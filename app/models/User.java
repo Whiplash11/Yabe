@@ -1,7 +1,5 @@
 package models;
 
-import java.util.*;
-
 import net.sf.oval.constraint.Email;
 import play.data.validation.*;
 import play.db.jpa.Model;
@@ -13,7 +11,6 @@ public class User extends Model {
 
     @Email
     @Required
-
     public String email;
 
     @Required
