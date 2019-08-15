@@ -1,10 +1,1071 @@
-13 七月 2019 20:37:11,409 INFO  ~ Starting D:\play-workspace\yabe
-13 七月 2019 20:37:11,680 INFO  ~ Module docviewer is available (D:\JetBrains\IDEA\play-1.5.3\play-1.5.3\modules\docviewer)
-13 七月 2019 20:37:12,328 WARN  ~ You're running Play! in DEV mode
-13 七月 2019 20:37:12,469 INFO  ~ Listening for HTTP on port 9000 (Waiting a first request to start) ...
-13 七月 2019 20:37:16,052 INFO  ~ HikariPool-1 - Starting...
-13 七月 2019 20:37:16,073 INFO  ~ HikariPool-1 - Start completed.
-13 七月 2019 20:37:16,087 INFO  ~ Connected to jdbc:h2:mem:play for default
-13 七月 2019 20:37:17,682 INFO  ~ Application 'Yet Another Blog Engine' is now started !
-13 七月 2019 20:39:28,747 INFO  ~ Restart: 2 classes changed, caused by: java.lang.UnsupportedOperationException: class redefinition failed: attempted to add a method
-13 七月 2019 20:43:16,768 INFO  ~ Restart: 1 classes changed, caused by: java.lang.UnsupportedOperationException: class redefinition failed: attempted to add a method
+14 七月 2019 18:46:03,501 INFO  ~ Starting D:\play-workspace\yabe
+14 七月 2019 18:46:03,803 INFO  ~ Module docviewer is available (D:\JetBrains\IDEA\play-1.5.3\play-1.5.3\modules\docviewer)
+14 七月 2019 18:46:04,439 WARN  ~ You're running Play! in DEV mode
+14 七月 2019 18:46:04,589 INFO  ~ Listening for HTTP on port 9000 (Waiting a first request to start) ...
+14 七月 2019 18:46:08,929 INFO  ~ HikariPool-1 - Starting...
+14 七月 2019 18:46:08,951 INFO  ~ HikariPool-1 - Start completed.
+14 七月 2019 18:46:08,965 INFO  ~ Connected to jdbc:h2:mem:play for default
+14 七月 2019 18:46:10,730 INFO  ~ Application 'Yet Another Blog Engine' is now started !
+14 七月 2019 18:46:11,682 ERROR ~ 
+
+@7cfoo7pjl
+Error during job execution (Bootstrap)
+
+Execution exception (In /app/Bootstrap.java around line 12)
+RuntimeException occurred : Cannot load fixture initial-data.yml[type=models.Post,id=jeffPost]: No previous reference found for object of type tags with key -play -architecture -mvc
+
+play.exceptions.JavaExecutionException: Cannot load fixture initial-data.yml[type=models.Post,id=jeffPost]: No previous reference found for object of type tags with key -play -architecture -mvc
+	at play.jobs.Job.call(Job.java:241)
+	at Invocation.Job(Play!)
+Caused by: java.lang.RuntimeException: Cannot load fixture initial-data.yml[type=models.Post,id=jeffPost]: No previous reference found for object of type tags with key -play -architecture -mvc
+	at play.test.Fixtures.loadModels(Fixtures.java:301)
+	at play.test.Fixtures.loadModels(Fixtures.java:192)
+	at Bootstrap.doJob(Bootstrap.java:12)
+	at play.jobs.Job.doJobWithResult(Job.java:64)
+	at play.jobs.Job$2.apply(Job.java:224)
+	at play.db.jpa.JPA.withTransaction(JPA.java:285)
+	at play.db.jpa.JPA.withinFilter(JPA.java:238)
+	at play.db.jpa.JPAPlugin$TransactionalFilter.withinFilter(JPAPlugin.java:304)
+	at play.jobs.Job.withinFilter(Job.java:201)
+	at play.jobs.Job.call(Job.java:220)
+	... 1 more
+Caused by: java.lang.RuntimeException: No previous reference found for object of type tags with key -play -architecture -mvc
+	at play.test.Fixtures.resolveDependencies(Fixtures.java:570)
+	at play.test.Fixtures.loadModels(Fixtures.java:260)
+	... 10 more
+14 七月 2019 18:46:11,773 ERROR ~ 
+
+@7cfoo7pjm
+Internal Server Error (500) for request GET /
+
+Oops: RuntimeException
+Unexpected error : Unexpected Error, caused by exception RuntimeException: Cannot load fixture initial-data.yml[type=models.Post,id=jeffPost]: No previous reference found for object of type tags with key -play -architecture -mvc
+
+play.exceptions.UnexpectedException: Unexpected Error
+	at play.jobs.Job.onException(Job.java:180)
+	at play.jobs.Job.call(Job.java:250)
+	at Invocation.Job(Play!)
+Caused by: java.lang.RuntimeException: Cannot load fixture initial-data.yml[type=models.Post,id=jeffPost]: No previous reference found for object of type tags with key -play -architecture -mvc
+	at play.test.Fixtures.loadModels(Fixtures.java:301)
+	at play.test.Fixtures.loadModels(Fixtures.java:192)
+	at Bootstrap.doJob(Bootstrap.java:12)
+	at play.jobs.Job.doJobWithResult(Job.java:64)
+	at play.jobs.Job$2.apply(Job.java:224)
+	at play.db.jpa.JPA.withTransaction(JPA.java:285)
+	at play.db.jpa.JPA.withinFilter(JPA.java:238)
+	at play.db.jpa.JPAPlugin$TransactionalFilter.withinFilter(JPAPlugin.java:304)
+	at play.jobs.Job.withinFilter(Job.java:201)
+	at play.jobs.Job.call(Job.java:220)
+	... 1 more
+Caused by: java.lang.RuntimeException: No previous reference found for object of type tags with key -play -architecture -mvc
+	at play.test.Fixtures.resolveDependencies(Fixtures.java:570)
+	at play.test.Fixtures.loadModels(Fixtures.java:260)
+	... 10 more
+14 七月 2019 18:46:23,176 ERROR ~ 
+
+@7cfoo7pjn
+Error during job execution (Bootstrap)
+
+Execution exception (In /app/Bootstrap.java around line 12)
+RuntimeException occurred : Cannot load fixture initial-data.yml[type=models.User,id=bob]: Cannot load fixture initial-data.yml, duplicate id 'bob' for type models.User
+
+play.exceptions.JavaExecutionException: Cannot load fixture initial-data.yml[type=models.User,id=bob]: Cannot load fixture initial-data.yml, duplicate id 'bob' for type models.User
+	at play.jobs.Job.call(Job.java:241)
+	at Invocation.Job(Play!)
+Caused by: java.lang.RuntimeException: Cannot load fixture initial-data.yml[type=models.User,id=bob]: Cannot load fixture initial-data.yml, duplicate id 'bob' for type models.User
+	at play.test.Fixtures.loadModels(Fixtures.java:301)
+	at play.test.Fixtures.loadModels(Fixtures.java:192)
+	at Bootstrap.doJob(Bootstrap.java:12)
+	at play.jobs.Job.doJobWithResult(Job.java:64)
+	at play.jobs.Job$2.apply(Job.java:224)
+	at play.db.jpa.JPA.withTransaction(JPA.java:285)
+	at play.db.jpa.JPA.withinFilter(JPA.java:238)
+	at play.db.jpa.JPAPlugin$TransactionalFilter.withinFilter(JPAPlugin.java:304)
+	at play.jobs.Job.withinFilter(Job.java:201)
+	at play.jobs.Job.call(Job.java:220)
+	... 1 more
+Caused by: java.lang.RuntimeException: Cannot load fixture initial-data.yml, duplicate id 'bob' for type models.User
+	at play.test.Fixtures.loadModels(Fixtures.java:248)
+	... 10 more
+14 七月 2019 18:46:23,227 ERROR ~ 
+
+@7cfoo7pjo
+Internal Server Error (500) for request GET /
+
+Oops: RuntimeException
+Unexpected error : Unexpected Error, caused by exception RuntimeException: Cannot load fixture initial-data.yml[type=models.User,id=bob]: Cannot load fixture initial-data.yml, duplicate id 'bob' for type models.User
+
+play.exceptions.UnexpectedException: Unexpected Error
+	at play.jobs.Job.onException(Job.java:180)
+	at play.jobs.Job.call(Job.java:250)
+	at Invocation.Job(Play!)
+Caused by: java.lang.RuntimeException: Cannot load fixture initial-data.yml[type=models.User,id=bob]: Cannot load fixture initial-data.yml, duplicate id 'bob' for type models.User
+	at play.test.Fixtures.loadModels(Fixtures.java:301)
+	at play.test.Fixtures.loadModels(Fixtures.java:192)
+	at Bootstrap.doJob(Bootstrap.java:12)
+	at play.jobs.Job.doJobWithResult(Job.java:64)
+	at play.jobs.Job$2.apply(Job.java:224)
+	at play.db.jpa.JPA.withTransaction(JPA.java:285)
+	at play.db.jpa.JPA.withinFilter(JPA.java:238)
+	at play.db.jpa.JPAPlugin$TransactionalFilter.withinFilter(JPAPlugin.java:304)
+	at play.jobs.Job.withinFilter(Job.java:201)
+	at play.jobs.Job.call(Job.java:220)
+	... 1 more
+Caused by: java.lang.RuntimeException: Cannot load fixture initial-data.yml, duplicate id 'bob' for type models.User
+	at play.test.Fixtures.loadModels(Fixtures.java:248)
+	... 10 more
+14 七月 2019 18:46:27,254 ERROR ~ 
+
+@7cfoo7pjp
+Error during job execution (Bootstrap)
+
+Execution exception (In /app/Bootstrap.java around line 12)
+RuntimeException occurred : Cannot load fixture initial-data.yml[type=models.User,id=bob]: Cannot load fixture initial-data.yml, duplicate id 'bob' for type models.User
+
+play.exceptions.JavaExecutionException: Cannot load fixture initial-data.yml[type=models.User,id=bob]: Cannot load fixture initial-data.yml, duplicate id 'bob' for type models.User
+	at play.jobs.Job.call(Job.java:241)
+	at Invocation.Job(Play!)
+Caused by: java.lang.RuntimeException: Cannot load fixture initial-data.yml[type=models.User,id=bob]: Cannot load fixture initial-data.yml, duplicate id 'bob' for type models.User
+	at play.test.Fixtures.loadModels(Fixtures.java:301)
+	at play.test.Fixtures.loadModels(Fixtures.java:192)
+	at Bootstrap.doJob(Bootstrap.java:12)
+	at play.jobs.Job.doJobWithResult(Job.java:64)
+	at play.jobs.Job$2.apply(Job.java:224)
+	at play.db.jpa.JPA.withTransaction(JPA.java:285)
+	at play.db.jpa.JPA.withinFilter(JPA.java:238)
+	at play.db.jpa.JPAPlugin$TransactionalFilter.withinFilter(JPAPlugin.java:304)
+	at play.jobs.Job.withinFilter(Job.java:201)
+	at play.jobs.Job.call(Job.java:220)
+	... 1 more
+Caused by: java.lang.RuntimeException: Cannot load fixture initial-data.yml, duplicate id 'bob' for type models.User
+	at play.test.Fixtures.loadModels(Fixtures.java:248)
+	... 10 more
+14 七月 2019 18:46:27,294 ERROR ~ 
+
+@7cfoo7pk0
+Internal Server Error (500) for request GET /
+
+Oops: RuntimeException
+Unexpected error : Unexpected Error, caused by exception RuntimeException: Cannot load fixture initial-data.yml[type=models.User,id=bob]: Cannot load fixture initial-data.yml, duplicate id 'bob' for type models.User
+
+play.exceptions.UnexpectedException: Unexpected Error
+	at play.jobs.Job.onException(Job.java:180)
+	at play.jobs.Job.call(Job.java:250)
+	at Invocation.Job(Play!)
+Caused by: java.lang.RuntimeException: Cannot load fixture initial-data.yml[type=models.User,id=bob]: Cannot load fixture initial-data.yml, duplicate id 'bob' for type models.User
+	at play.test.Fixtures.loadModels(Fixtures.java:301)
+	at play.test.Fixtures.loadModels(Fixtures.java:192)
+	at Bootstrap.doJob(Bootstrap.java:12)
+	at play.jobs.Job.doJobWithResult(Job.java:64)
+	at play.jobs.Job$2.apply(Job.java:224)
+	at play.db.jpa.JPA.withTransaction(JPA.java:285)
+	at play.db.jpa.JPA.withinFilter(JPA.java:238)
+	at play.db.jpa.JPAPlugin$TransactionalFilter.withinFilter(JPAPlugin.java:304)
+	at play.jobs.Job.withinFilter(Job.java:201)
+	at play.jobs.Job.call(Job.java:220)
+	... 1 more
+Caused by: java.lang.RuntimeException: Cannot load fixture initial-data.yml, duplicate id 'bob' for type models.User
+	at play.test.Fixtures.loadModels(Fixtures.java:248)
+	... 10 more
+14 七月 2019 18:49:55,731 ERROR ~ 
+
+@7cfoo7pk1
+Error during job execution (Bootstrap)
+
+Execution exception (In /app/Bootstrap.java around line 12)
+RuntimeException occurred : Cannot load fixture initial-data.yml[type=models.User,id=bob]: Cannot load fixture initial-data.yml, duplicate id 'bob' for type models.User
+
+play.exceptions.JavaExecutionException: Cannot load fixture initial-data.yml[type=models.User,id=bob]: Cannot load fixture initial-data.yml, duplicate id 'bob' for type models.User
+	at play.jobs.Job.call(Job.java:241)
+	at Invocation.Job(Play!)
+Caused by: java.lang.RuntimeException: Cannot load fixture initial-data.yml[type=models.User,id=bob]: Cannot load fixture initial-data.yml, duplicate id 'bob' for type models.User
+	at play.test.Fixtures.loadModels(Fixtures.java:301)
+	at play.test.Fixtures.loadModels(Fixtures.java:192)
+	at Bootstrap.doJob(Bootstrap.java:12)
+	at play.jobs.Job.doJobWithResult(Job.java:64)
+	at play.jobs.Job$2.apply(Job.java:224)
+	at play.db.jpa.JPA.withTransaction(JPA.java:285)
+	at play.db.jpa.JPA.withinFilter(JPA.java:238)
+	at play.db.jpa.JPAPlugin$TransactionalFilter.withinFilter(JPAPlugin.java:304)
+	at play.jobs.Job.withinFilter(Job.java:201)
+	at play.jobs.Job.call(Job.java:220)
+	... 1 more
+Caused by: java.lang.RuntimeException: Cannot load fixture initial-data.yml, duplicate id 'bob' for type models.User
+	at play.test.Fixtures.loadModels(Fixtures.java:248)
+	... 10 more
+14 七月 2019 18:49:55,757 ERROR ~ 
+
+@7cfoo7pk2
+Internal Server Error (500) for request GET /
+
+Oops: RuntimeException
+Unexpected error : Unexpected Error, caused by exception RuntimeException: Cannot load fixture initial-data.yml[type=models.User,id=bob]: Cannot load fixture initial-data.yml, duplicate id 'bob' for type models.User
+
+play.exceptions.UnexpectedException: Unexpected Error
+	at play.jobs.Job.onException(Job.java:180)
+	at play.jobs.Job.call(Job.java:250)
+	at Invocation.Job(Play!)
+Caused by: java.lang.RuntimeException: Cannot load fixture initial-data.yml[type=models.User,id=bob]: Cannot load fixture initial-data.yml, duplicate id 'bob' for type models.User
+	at play.test.Fixtures.loadModels(Fixtures.java:301)
+	at play.test.Fixtures.loadModels(Fixtures.java:192)
+	at Bootstrap.doJob(Bootstrap.java:12)
+	at play.jobs.Job.doJobWithResult(Job.java:64)
+	at play.jobs.Job$2.apply(Job.java:224)
+	at play.db.jpa.JPA.withTransaction(JPA.java:285)
+	at play.db.jpa.JPA.withinFilter(JPA.java:238)
+	at play.db.jpa.JPAPlugin$TransactionalFilter.withinFilter(JPAPlugin.java:304)
+	at play.jobs.Job.withinFilter(Job.java:201)
+	at play.jobs.Job.call(Job.java:220)
+	... 1 more
+Caused by: java.lang.RuntimeException: Cannot load fixture initial-data.yml, duplicate id 'bob' for type models.User
+	at play.test.Fixtures.loadModels(Fixtures.java:248)
+	... 10 more
+14 七月 2019 18:52:32,665 ERROR ~ 
+
+@7cfoo7pk3
+Error during job execution (Bootstrap)
+
+Execution exception (In /app/Bootstrap.java around line 12)
+RuntimeException occurred : Cannot load fixture initial-data.yml[type=models.User,id=bob]: Cannot load fixture initial-data.yml, duplicate id 'bob' for type models.User
+
+play.exceptions.JavaExecutionException: Cannot load fixture initial-data.yml[type=models.User,id=bob]: Cannot load fixture initial-data.yml, duplicate id 'bob' for type models.User
+	at play.jobs.Job.call(Job.java:241)
+	at Invocation.Job(Play!)
+Caused by: java.lang.RuntimeException: Cannot load fixture initial-data.yml[type=models.User,id=bob]: Cannot load fixture initial-data.yml, duplicate id 'bob' for type models.User
+	at play.test.Fixtures.loadModels(Fixtures.java:301)
+	at play.test.Fixtures.loadModels(Fixtures.java:192)
+	at Bootstrap.doJob(Bootstrap.java:12)
+	at play.jobs.Job.doJobWithResult(Job.java:64)
+	at play.jobs.Job$2.apply(Job.java:224)
+	at play.db.jpa.JPA.withTransaction(JPA.java:285)
+	at play.db.jpa.JPA.withinFilter(JPA.java:238)
+	at play.db.jpa.JPAPlugin$TransactionalFilter.withinFilter(JPAPlugin.java:304)
+	at play.jobs.Job.withinFilter(Job.java:201)
+	at play.jobs.Job.call(Job.java:220)
+	... 1 more
+Caused by: java.lang.RuntimeException: Cannot load fixture initial-data.yml, duplicate id 'bob' for type models.User
+	at play.test.Fixtures.loadModels(Fixtures.java:248)
+	... 10 more
+14 七月 2019 18:52:32,710 ERROR ~ 
+
+@7cfoo7pk4
+Internal Server Error (500) for request GET /
+
+Oops: RuntimeException
+Unexpected error : Unexpected Error, caused by exception RuntimeException: Cannot load fixture initial-data.yml[type=models.User,id=bob]: Cannot load fixture initial-data.yml, duplicate id 'bob' for type models.User
+
+play.exceptions.UnexpectedException: Unexpected Error
+	at play.jobs.Job.onException(Job.java:180)
+	at play.jobs.Job.call(Job.java:250)
+	at Invocation.Job(Play!)
+Caused by: java.lang.RuntimeException: Cannot load fixture initial-data.yml[type=models.User,id=bob]: Cannot load fixture initial-data.yml, duplicate id 'bob' for type models.User
+	at play.test.Fixtures.loadModels(Fixtures.java:301)
+	at play.test.Fixtures.loadModels(Fixtures.java:192)
+	at Bootstrap.doJob(Bootstrap.java:12)
+	at play.jobs.Job.doJobWithResult(Job.java:64)
+	at play.jobs.Job$2.apply(Job.java:224)
+	at play.db.jpa.JPA.withTransaction(JPA.java:285)
+	at play.db.jpa.JPA.withinFilter(JPA.java:238)
+	at play.db.jpa.JPAPlugin$TransactionalFilter.withinFilter(JPAPlugin.java:304)
+	at play.jobs.Job.withinFilter(Job.java:201)
+	at play.jobs.Job.call(Job.java:220)
+	... 1 more
+Caused by: java.lang.RuntimeException: Cannot load fixture initial-data.yml, duplicate id 'bob' for type models.User
+	at play.test.Fixtures.loadModels(Fixtures.java:248)
+	... 10 more
+14 七月 2019 18:57:32,967 ERROR ~ 
+
+@7cfoo7pk5
+Error during job execution (Bootstrap)
+
+Execution exception (In /app/Bootstrap.java around line 12)
+RuntimeException occurred : Cannot load fixture initial-data.yml[type=models.User,id=bob]: Cannot load fixture initial-data.yml, duplicate id 'bob' for type models.User
+
+play.exceptions.JavaExecutionException: Cannot load fixture initial-data.yml[type=models.User,id=bob]: Cannot load fixture initial-data.yml, duplicate id 'bob' for type models.User
+	at play.jobs.Job.call(Job.java:241)
+	at Invocation.Job(Play!)
+Caused by: java.lang.RuntimeException: Cannot load fixture initial-data.yml[type=models.User,id=bob]: Cannot load fixture initial-data.yml, duplicate id 'bob' for type models.User
+	at play.test.Fixtures.loadModels(Fixtures.java:301)
+	at play.test.Fixtures.loadModels(Fixtures.java:192)
+	at Bootstrap.doJob(Bootstrap.java:12)
+	at play.jobs.Job.doJobWithResult(Job.java:64)
+	at play.jobs.Job$2.apply(Job.java:224)
+	at play.db.jpa.JPA.withTransaction(JPA.java:285)
+	at play.db.jpa.JPA.withinFilter(JPA.java:238)
+	at play.db.jpa.JPAPlugin$TransactionalFilter.withinFilter(JPAPlugin.java:304)
+	at play.jobs.Job.withinFilter(Job.java:201)
+	at play.jobs.Job.call(Job.java:220)
+	... 1 more
+Caused by: java.lang.RuntimeException: Cannot load fixture initial-data.yml, duplicate id 'bob' for type models.User
+	at play.test.Fixtures.loadModels(Fixtures.java:248)
+	... 10 more
+14 七月 2019 18:57:32,992 ERROR ~ 
+
+@7cfoo7pk6
+Internal Server Error (500) for request GET /
+
+Oops: RuntimeException
+Unexpected error : Unexpected Error, caused by exception RuntimeException: Cannot load fixture initial-data.yml[type=models.User,id=bob]: Cannot load fixture initial-data.yml, duplicate id 'bob' for type models.User
+
+play.exceptions.UnexpectedException: Unexpected Error
+	at play.jobs.Job.onException(Job.java:180)
+	at play.jobs.Job.call(Job.java:250)
+	at Invocation.Job(Play!)
+Caused by: java.lang.RuntimeException: Cannot load fixture initial-data.yml[type=models.User,id=bob]: Cannot load fixture initial-data.yml, duplicate id 'bob' for type models.User
+	at play.test.Fixtures.loadModels(Fixtures.java:301)
+	at play.test.Fixtures.loadModels(Fixtures.java:192)
+	at Bootstrap.doJob(Bootstrap.java:12)
+	at play.jobs.Job.doJobWithResult(Job.java:64)
+	at play.jobs.Job$2.apply(Job.java:224)
+	at play.db.jpa.JPA.withTransaction(JPA.java:285)
+	at play.db.jpa.JPA.withinFilter(JPA.java:238)
+	at play.db.jpa.JPAPlugin$TransactionalFilter.withinFilter(JPAPlugin.java:304)
+	at play.jobs.Job.withinFilter(Job.java:201)
+	at play.jobs.Job.call(Job.java:220)
+	... 1 more
+Caused by: java.lang.RuntimeException: Cannot load fixture initial-data.yml, duplicate id 'bob' for type models.User
+	at play.test.Fixtures.loadModels(Fixtures.java:248)
+	... 10 more
+14 七月 2019 18:57:38,774 ERROR ~ 
+
+@7cfoo7pk7
+Error during job execution (Bootstrap)
+
+Execution exception (In /app/Bootstrap.java around line 12)
+RuntimeException occurred : Cannot load fixture initial-data.yml[type=models.User,id=bob]: Cannot load fixture initial-data.yml, duplicate id 'bob' for type models.User
+
+play.exceptions.JavaExecutionException: Cannot load fixture initial-data.yml[type=models.User,id=bob]: Cannot load fixture initial-data.yml, duplicate id 'bob' for type models.User
+	at play.jobs.Job.call(Job.java:241)
+	at Invocation.Job(Play!)
+Caused by: java.lang.RuntimeException: Cannot load fixture initial-data.yml[type=models.User,id=bob]: Cannot load fixture initial-data.yml, duplicate id 'bob' for type models.User
+	at play.test.Fixtures.loadModels(Fixtures.java:301)
+	at play.test.Fixtures.loadModels(Fixtures.java:192)
+	at Bootstrap.doJob(Bootstrap.java:12)
+	at play.jobs.Job.doJobWithResult(Job.java:64)
+	at play.jobs.Job$2.apply(Job.java:224)
+	at play.db.jpa.JPA.withTransaction(JPA.java:285)
+	at play.db.jpa.JPA.withinFilter(JPA.java:238)
+	at play.db.jpa.JPAPlugin$TransactionalFilter.withinFilter(JPAPlugin.java:304)
+	at play.jobs.Job.withinFilter(Job.java:201)
+	at play.jobs.Job.call(Job.java:220)
+	... 1 more
+Caused by: java.lang.RuntimeException: Cannot load fixture initial-data.yml, duplicate id 'bob' for type models.User
+	at play.test.Fixtures.loadModels(Fixtures.java:248)
+	... 10 more
+14 七月 2019 18:57:38,818 ERROR ~ 
+
+@7cfoo7pk8
+Internal Server Error (500) for request GET /
+
+Oops: RuntimeException
+Unexpected error : Unexpected Error, caused by exception RuntimeException: Cannot load fixture initial-data.yml[type=models.User,id=bob]: Cannot load fixture initial-data.yml, duplicate id 'bob' for type models.User
+
+play.exceptions.UnexpectedException: Unexpected Error
+	at play.jobs.Job.onException(Job.java:180)
+	at play.jobs.Job.call(Job.java:250)
+	at Invocation.Job(Play!)
+Caused by: java.lang.RuntimeException: Cannot load fixture initial-data.yml[type=models.User,id=bob]: Cannot load fixture initial-data.yml, duplicate id 'bob' for type models.User
+	at play.test.Fixtures.loadModels(Fixtures.java:301)
+	at play.test.Fixtures.loadModels(Fixtures.java:192)
+	at Bootstrap.doJob(Bootstrap.java:12)
+	at play.jobs.Job.doJobWithResult(Job.java:64)
+	at play.jobs.Job$2.apply(Job.java:224)
+	at play.db.jpa.JPA.withTransaction(JPA.java:285)
+	at play.db.jpa.JPA.withinFilter(JPA.java:238)
+	at play.db.jpa.JPAPlugin$TransactionalFilter.withinFilter(JPAPlugin.java:304)
+	at play.jobs.Job.withinFilter(Job.java:201)
+	at play.jobs.Job.call(Job.java:220)
+	... 1 more
+Caused by: java.lang.RuntimeException: Cannot load fixture initial-data.yml, duplicate id 'bob' for type models.User
+	at play.test.Fixtures.loadModels(Fixtures.java:248)
+	... 10 more
+14 七月 2019 19:02:40,489 ERROR ~ 
+
+@7cfoo7pk9
+Error during job execution (Bootstrap)
+
+Execution exception (In /app/Bootstrap.java around line 12)
+RuntimeException occurred : Cannot load fixture initial-data.yml[type=models.User,id=bob]: Cannot load fixture initial-data.yml, duplicate id 'bob' for type models.User
+
+play.exceptions.JavaExecutionException: Cannot load fixture initial-data.yml[type=models.User,id=bob]: Cannot load fixture initial-data.yml, duplicate id 'bob' for type models.User
+	at play.jobs.Job.call(Job.java:241)
+	at Invocation.Job(Play!)
+Caused by: java.lang.RuntimeException: Cannot load fixture initial-data.yml[type=models.User,id=bob]: Cannot load fixture initial-data.yml, duplicate id 'bob' for type models.User
+	at play.test.Fixtures.loadModels(Fixtures.java:301)
+	at play.test.Fixtures.loadModels(Fixtures.java:192)
+	at Bootstrap.doJob(Bootstrap.java:12)
+	at play.jobs.Job.doJobWithResult(Job.java:64)
+	at play.jobs.Job$2.apply(Job.java:224)
+	at play.db.jpa.JPA.withTransaction(JPA.java:285)
+	at play.db.jpa.JPA.withinFilter(JPA.java:238)
+	at play.db.jpa.JPAPlugin$TransactionalFilter.withinFilter(JPAPlugin.java:304)
+	at play.jobs.Job.withinFilter(Job.java:201)
+	at play.jobs.Job.call(Job.java:220)
+	... 1 more
+Caused by: java.lang.RuntimeException: Cannot load fixture initial-data.yml, duplicate id 'bob' for type models.User
+	at play.test.Fixtures.loadModels(Fixtures.java:248)
+	... 10 more
+14 七月 2019 19:02:40,514 ERROR ~ 
+
+@7cfoo7pka
+Internal Server Error (500) for request GET /
+
+Oops: RuntimeException
+Unexpected error : Unexpected Error, caused by exception RuntimeException: Cannot load fixture initial-data.yml[type=models.User,id=bob]: Cannot load fixture initial-data.yml, duplicate id 'bob' for type models.User
+
+play.exceptions.UnexpectedException: Unexpected Error
+	at play.jobs.Job.onException(Job.java:180)
+	at play.jobs.Job.call(Job.java:250)
+	at Invocation.Job(Play!)
+Caused by: java.lang.RuntimeException: Cannot load fixture initial-data.yml[type=models.User,id=bob]: Cannot load fixture initial-data.yml, duplicate id 'bob' for type models.User
+	at play.test.Fixtures.loadModels(Fixtures.java:301)
+	at play.test.Fixtures.loadModels(Fixtures.java:192)
+	at Bootstrap.doJob(Bootstrap.java:12)
+	at play.jobs.Job.doJobWithResult(Job.java:64)
+	at play.jobs.Job$2.apply(Job.java:224)
+	at play.db.jpa.JPA.withTransaction(JPA.java:285)
+	at play.db.jpa.JPA.withinFilter(JPA.java:238)
+	at play.db.jpa.JPAPlugin$TransactionalFilter.withinFilter(JPAPlugin.java:304)
+	at play.jobs.Job.withinFilter(Job.java:201)
+	at play.jobs.Job.call(Job.java:220)
+	... 1 more
+Caused by: java.lang.RuntimeException: Cannot load fixture initial-data.yml, duplicate id 'bob' for type models.User
+	at play.test.Fixtures.loadModels(Fixtures.java:248)
+	... 10 more
+14 七月 2019 19:08:39,727 ERROR ~ 
+
+@7cfoo7pkb
+Error during job execution (Bootstrap)
+
+Execution exception (In /app/Bootstrap.java around line 12)
+RuntimeException occurred : Cannot load fixture initial-data.yml[type=models.User,id=bob]: Cannot load fixture initial-data.yml, duplicate id 'bob' for type models.User
+
+play.exceptions.JavaExecutionException: Cannot load fixture initial-data.yml[type=models.User,id=bob]: Cannot load fixture initial-data.yml, duplicate id 'bob' for type models.User
+	at play.jobs.Job.call(Job.java:241)
+	at Invocation.Job(Play!)
+Caused by: java.lang.RuntimeException: Cannot load fixture initial-data.yml[type=models.User,id=bob]: Cannot load fixture initial-data.yml, duplicate id 'bob' for type models.User
+	at play.test.Fixtures.loadModels(Fixtures.java:301)
+	at play.test.Fixtures.loadModels(Fixtures.java:192)
+	at Bootstrap.doJob(Bootstrap.java:12)
+	at play.jobs.Job.doJobWithResult(Job.java:64)
+	at play.jobs.Job$2.apply(Job.java:224)
+	at play.db.jpa.JPA.withTransaction(JPA.java:285)
+	at play.db.jpa.JPA.withinFilter(JPA.java:238)
+	at play.db.jpa.JPAPlugin$TransactionalFilter.withinFilter(JPAPlugin.java:304)
+	at play.jobs.Job.withinFilter(Job.java:201)
+	at play.jobs.Job.call(Job.java:220)
+	... 1 more
+Caused by: java.lang.RuntimeException: Cannot load fixture initial-data.yml, duplicate id 'bob' for type models.User
+	at play.test.Fixtures.loadModels(Fixtures.java:248)
+	... 10 more
+14 七月 2019 19:08:39,757 ERROR ~ 
+
+@7cfoo7pkc
+Internal Server Error (500) for request GET /
+
+Oops: RuntimeException
+Unexpected error : Unexpected Error, caused by exception RuntimeException: Cannot load fixture initial-data.yml[type=models.User,id=bob]: Cannot load fixture initial-data.yml, duplicate id 'bob' for type models.User
+
+play.exceptions.UnexpectedException: Unexpected Error
+	at play.jobs.Job.onException(Job.java:180)
+	at play.jobs.Job.call(Job.java:250)
+	at Invocation.Job(Play!)
+Caused by: java.lang.RuntimeException: Cannot load fixture initial-data.yml[type=models.User,id=bob]: Cannot load fixture initial-data.yml, duplicate id 'bob' for type models.User
+	at play.test.Fixtures.loadModels(Fixtures.java:301)
+	at play.test.Fixtures.loadModels(Fixtures.java:192)
+	at Bootstrap.doJob(Bootstrap.java:12)
+	at play.jobs.Job.doJobWithResult(Job.java:64)
+	at play.jobs.Job$2.apply(Job.java:224)
+	at play.db.jpa.JPA.withTransaction(JPA.java:285)
+	at play.db.jpa.JPA.withinFilter(JPA.java:238)
+	at play.db.jpa.JPAPlugin$TransactionalFilter.withinFilter(JPAPlugin.java:304)
+	at play.jobs.Job.withinFilter(Job.java:201)
+	at play.jobs.Job.call(Job.java:220)
+	... 1 more
+Caused by: java.lang.RuntimeException: Cannot load fixture initial-data.yml, duplicate id 'bob' for type models.User
+	at play.test.Fixtures.loadModels(Fixtures.java:248)
+	... 10 more
+14 七月 2019 19:08:42,262 ERROR ~ 
+
+@7cfoo7pkd
+Error during job execution (Bootstrap)
+
+Execution exception (In /app/Bootstrap.java around line 12)
+RuntimeException occurred : Cannot load fixture initial-data.yml[type=models.User,id=bob]: Cannot load fixture initial-data.yml, duplicate id 'bob' for type models.User
+
+play.exceptions.JavaExecutionException: Cannot load fixture initial-data.yml[type=models.User,id=bob]: Cannot load fixture initial-data.yml, duplicate id 'bob' for type models.User
+	at play.jobs.Job.call(Job.java:241)
+	at Invocation.Job(Play!)
+Caused by: java.lang.RuntimeException: Cannot load fixture initial-data.yml[type=models.User,id=bob]: Cannot load fixture initial-data.yml, duplicate id 'bob' for type models.User
+	at play.test.Fixtures.loadModels(Fixtures.java:301)
+	at play.test.Fixtures.loadModels(Fixtures.java:192)
+	at Bootstrap.doJob(Bootstrap.java:12)
+	at play.jobs.Job.doJobWithResult(Job.java:64)
+	at play.jobs.Job$2.apply(Job.java:224)
+	at play.db.jpa.JPA.withTransaction(JPA.java:285)
+	at play.db.jpa.JPA.withinFilter(JPA.java:238)
+	at play.db.jpa.JPAPlugin$TransactionalFilter.withinFilter(JPAPlugin.java:304)
+	at play.jobs.Job.withinFilter(Job.java:201)
+	at play.jobs.Job.call(Job.java:220)
+	... 1 more
+Caused by: java.lang.RuntimeException: Cannot load fixture initial-data.yml, duplicate id 'bob' for type models.User
+	at play.test.Fixtures.loadModels(Fixtures.java:248)
+	... 10 more
+14 七月 2019 19:08:42,286 ERROR ~ 
+
+@7cfoo7pke
+Internal Server Error (500) for request GET /
+
+Oops: RuntimeException
+Unexpected error : Unexpected Error, caused by exception RuntimeException: Cannot load fixture initial-data.yml[type=models.User,id=bob]: Cannot load fixture initial-data.yml, duplicate id 'bob' for type models.User
+
+play.exceptions.UnexpectedException: Unexpected Error
+	at play.jobs.Job.onException(Job.java:180)
+	at play.jobs.Job.call(Job.java:250)
+	at Invocation.Job(Play!)
+Caused by: java.lang.RuntimeException: Cannot load fixture initial-data.yml[type=models.User,id=bob]: Cannot load fixture initial-data.yml, duplicate id 'bob' for type models.User
+	at play.test.Fixtures.loadModels(Fixtures.java:301)
+	at play.test.Fixtures.loadModels(Fixtures.java:192)
+	at Bootstrap.doJob(Bootstrap.java:12)
+	at play.jobs.Job.doJobWithResult(Job.java:64)
+	at play.jobs.Job$2.apply(Job.java:224)
+	at play.db.jpa.JPA.withTransaction(JPA.java:285)
+	at play.db.jpa.JPA.withinFilter(JPA.java:238)
+	at play.db.jpa.JPAPlugin$TransactionalFilter.withinFilter(JPAPlugin.java:304)
+	at play.jobs.Job.withinFilter(Job.java:201)
+	at play.jobs.Job.call(Job.java:220)
+	... 1 more
+Caused by: java.lang.RuntimeException: Cannot load fixture initial-data.yml, duplicate id 'bob' for type models.User
+	at play.test.Fixtures.loadModels(Fixtures.java:248)
+	... 10 more
+14 七月 2019 19:08:49,906 ERROR ~ 
+
+@7cfoo7pkf
+Error during job execution (Bootstrap)
+
+Execution exception (In /app/Bootstrap.java around line 12)
+RuntimeException occurred : Cannot load fixture initial-data.yml[type=models.User,id=bob]: Cannot load fixture initial-data.yml, duplicate id 'bob' for type models.User
+
+play.exceptions.JavaExecutionException: Cannot load fixture initial-data.yml[type=models.User,id=bob]: Cannot load fixture initial-data.yml, duplicate id 'bob' for type models.User
+	at play.jobs.Job.call(Job.java:241)
+	at Invocation.Job(Play!)
+Caused by: java.lang.RuntimeException: Cannot load fixture initial-data.yml[type=models.User,id=bob]: Cannot load fixture initial-data.yml, duplicate id 'bob' for type models.User
+	at play.test.Fixtures.loadModels(Fixtures.java:301)
+	at play.test.Fixtures.loadModels(Fixtures.java:192)
+	at Bootstrap.doJob(Bootstrap.java:12)
+	at play.jobs.Job.doJobWithResult(Job.java:64)
+	at play.jobs.Job$2.apply(Job.java:224)
+	at play.db.jpa.JPA.withTransaction(JPA.java:285)
+	at play.db.jpa.JPA.withinFilter(JPA.java:238)
+	at play.db.jpa.JPAPlugin$TransactionalFilter.withinFilter(JPAPlugin.java:304)
+	at play.jobs.Job.withinFilter(Job.java:201)
+	at play.jobs.Job.call(Job.java:220)
+	... 1 more
+Caused by: java.lang.RuntimeException: Cannot load fixture initial-data.yml, duplicate id 'bob' for type models.User
+	at play.test.Fixtures.loadModels(Fixtures.java:248)
+	... 10 more
+14 七月 2019 19:08:49,934 ERROR ~ 
+
+@7cfoo7pkg
+Internal Server Error (500) for request GET /
+
+Oops: RuntimeException
+Unexpected error : Unexpected Error, caused by exception RuntimeException: Cannot load fixture initial-data.yml[type=models.User,id=bob]: Cannot load fixture initial-data.yml, duplicate id 'bob' for type models.User
+
+play.exceptions.UnexpectedException: Unexpected Error
+	at play.jobs.Job.onException(Job.java:180)
+	at play.jobs.Job.call(Job.java:250)
+	at Invocation.Job(Play!)
+Caused by: java.lang.RuntimeException: Cannot load fixture initial-data.yml[type=models.User,id=bob]: Cannot load fixture initial-data.yml, duplicate id 'bob' for type models.User
+	at play.test.Fixtures.loadModels(Fixtures.java:301)
+	at play.test.Fixtures.loadModels(Fixtures.java:192)
+	at Bootstrap.doJob(Bootstrap.java:12)
+	at play.jobs.Job.doJobWithResult(Job.java:64)
+	at play.jobs.Job$2.apply(Job.java:224)
+	at play.db.jpa.JPA.withTransaction(JPA.java:285)
+	at play.db.jpa.JPA.withinFilter(JPA.java:238)
+	at play.db.jpa.JPAPlugin$TransactionalFilter.withinFilter(JPAPlugin.java:304)
+	at play.jobs.Job.withinFilter(Job.java:201)
+	at play.jobs.Job.call(Job.java:220)
+	... 1 more
+Caused by: java.lang.RuntimeException: Cannot load fixture initial-data.yml, duplicate id 'bob' for type models.User
+	at play.test.Fixtures.loadModels(Fixtures.java:248)
+	... 10 more
+14 七月 2019 19:34:13,751 ERROR ~ Restart: The play Cache is not alive (STATUS_SHUTDOWN)
+java.lang.IllegalStateException: The play Cache is not alive (STATUS_SHUTDOWN)
+	at net.sf.ehcache.Cache$CacheStatus.checkAlive(Cache.java:4104)
+	at net.sf.ehcache.Cache.checkStatus(Cache.java:2792)
+	at net.sf.ehcache.Cache.removeAll(Cache.java:2518)
+	at net.sf.ehcache.Cache.removeAll(Cache.java:2504)
+	at play.cache.EhCacheImpl.clear(EhCacheImpl.java:58)
+	at play.cache.Cache.clear(Cache.java:209)
+	at play.classloading.ApplicationClassloader.detectChanges(ApplicationClassloader.java:350)
+	at play.Play.detectChanges(Play.java:663)
+	at play.Invoker$Invocation.init(Invoker.java:220)
+	at Invocation.HTTP Request(Play!)
+14 七月 2019 19:34:14,357 ERROR ~ 
+
+@7cfoo7pkh
+Error during job execution (Bootstrap)
+
+Execution exception (In /app/Bootstrap.java around line 12)
+RuntimeException occurred : Cannot load fixture initial-data.yml: while parsing a block mapping  in 'string', line 32, column 3:       title:          About the model  ...        ^ expected <block end>, but found Scalar  in 'string', line 45, column 5:         business situation, and business ...          ^ 
+
+play.exceptions.JavaExecutionException: Cannot load fixture initial-data.yml: while parsing a block mapping
+ in 'string', line 32, column 3:
+      title:          About the model  ... 
+      ^
+expected <block end>, but found Scalar
+ in 'string', line 45, column 5:
+        business situation, and business ... 
+        ^
+
+	at play.jobs.Job.call(Job.java:241)
+	at Invocation.Job(Play!)
+Caused by: java.lang.RuntimeException: Cannot load fixture initial-data.yml: while parsing a block mapping
+ in 'string', line 32, column 3:
+      title:          About the model  ... 
+      ^
+expected <block end>, but found Scalar
+ in 'string', line 45, column 5:
+        business situation, and business ... 
+        ^
+
+	at play.test.Fixtures.loadModels(Fixtures.java:301)
+	at play.test.Fixtures.loadModels(Fixtures.java:192)
+	at Bootstrap.doJob(Bootstrap.java:12)
+	at play.jobs.Job.doJobWithResult(Job.java:64)
+	at play.jobs.Job$2.apply(Job.java:224)
+	at play.db.jpa.JPA.withTransaction(JPA.java:285)
+	at play.db.jpa.JPA.withinFilter(JPA.java:238)
+	at play.db.jpa.JPAPlugin$TransactionalFilter.withinFilter(JPAPlugin.java:304)
+	at play.jobs.Job.withinFilter(Job.java:201)
+	at play.jobs.Job.call(Job.java:220)
+	... 1 more
+Caused by: while parsing a block mapping
+ in 'string', line 32, column 3:
+      title:          About the model  ... 
+      ^
+expected <block end>, but found Scalar
+ in 'string', line 45, column 5:
+        business situation, and business ... 
+        ^
+
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseBlockMappingKey.produce(ParserImpl.java:569)
+	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:157)
+	at org.yaml.snakeyaml.parser.ParserImpl.checkEvent(ParserImpl.java:147)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:224)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:155)
+	at org.yaml.snakeyaml.composer.Composer.composeValueNode(Composer.java:246)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingChildren(Composer.java:237)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:225)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:155)
+	at org.yaml.snakeyaml.composer.Composer.composeDocument(Composer.java:122)
+	at org.yaml.snakeyaml.composer.Composer.getSingleNode(Composer.java:105)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.getSingleData(BaseConstructor.java:120)
+	at org.yaml.snakeyaml.Yaml.loadFromReader(Yaml.java:450)
+	at org.yaml.snakeyaml.Yaml.load(Yaml.java:369)
+	at play.test.Fixtures.loadModels(Fixtures.java:230)
+	... 10 more
+14 七月 2019 19:34:14,394 ERROR ~ 
+
+@7cfoo7pki
+Internal Server Error (500) for request GET /
+
+Oops: RuntimeException
+Unexpected error : Unexpected Error, caused by exception RuntimeException: Cannot load fixture initial-data.yml: while parsing a block mapping  in 'string', line 32, column 3:       title:          About the model  ...        ^ expected <block end>, but found Scalar  in 'string', line 45, column 5:         business situation, and business ...          ^ 
+
+play.exceptions.UnexpectedException: Unexpected Error
+	at play.jobs.Job.onException(Job.java:180)
+	at play.jobs.Job.call(Job.java:250)
+	at Invocation.Job(Play!)
+Caused by: java.lang.RuntimeException: Cannot load fixture initial-data.yml: while parsing a block mapping
+ in 'string', line 32, column 3:
+      title:          About the model  ... 
+      ^
+expected <block end>, but found Scalar
+ in 'string', line 45, column 5:
+        business situation, and business ... 
+        ^
+
+	at play.test.Fixtures.loadModels(Fixtures.java:301)
+	at play.test.Fixtures.loadModels(Fixtures.java:192)
+	at Bootstrap.doJob(Bootstrap.java:12)
+	at play.jobs.Job.doJobWithResult(Job.java:64)
+	at play.jobs.Job$2.apply(Job.java:224)
+	at play.db.jpa.JPA.withTransaction(JPA.java:285)
+	at play.db.jpa.JPA.withinFilter(JPA.java:238)
+	at play.db.jpa.JPAPlugin$TransactionalFilter.withinFilter(JPAPlugin.java:304)
+	at play.jobs.Job.withinFilter(Job.java:201)
+	at play.jobs.Job.call(Job.java:220)
+	... 1 more
+Caused by: while parsing a block mapping
+ in 'string', line 32, column 3:
+      title:          About the model  ... 
+      ^
+expected <block end>, but found Scalar
+ in 'string', line 45, column 5:
+        business situation, and business ... 
+        ^
+
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseBlockMappingKey.produce(ParserImpl.java:569)
+	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:157)
+	at org.yaml.snakeyaml.parser.ParserImpl.checkEvent(ParserImpl.java:147)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:224)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:155)
+	at org.yaml.snakeyaml.composer.Composer.composeValueNode(Composer.java:246)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingChildren(Composer.java:237)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:225)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:155)
+	at org.yaml.snakeyaml.composer.Composer.composeDocument(Composer.java:122)
+	at org.yaml.snakeyaml.composer.Composer.getSingleNode(Composer.java:105)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.getSingleData(BaseConstructor.java:120)
+	at org.yaml.snakeyaml.Yaml.loadFromReader(Yaml.java:450)
+	at org.yaml.snakeyaml.Yaml.load(Yaml.java:369)
+	at play.test.Fixtures.loadModels(Fixtures.java:230)
+	... 10 more
+14 七月 2019 19:34:21,607 ERROR ~ 
+
+@7cfoo7pkj
+Error during job execution (Bootstrap)
+
+Execution exception (In /app/Bootstrap.java around line 12)
+RuntimeException occurred : Cannot load fixture initial-data.yml: while parsing a block mapping  in 'string', line 32, column 3:       title:          About the model  ...        ^ expected <block end>, but found Scalar  in 'string', line 45, column 5:         business situation, and business ...          ^ 
+
+play.exceptions.JavaExecutionException: Cannot load fixture initial-data.yml: while parsing a block mapping
+ in 'string', line 32, column 3:
+      title:          About the model  ... 
+      ^
+expected <block end>, but found Scalar
+ in 'string', line 45, column 5:
+        business situation, and business ... 
+        ^
+
+	at play.jobs.Job.call(Job.java:241)
+	at Invocation.Job(Play!)
+Caused by: java.lang.RuntimeException: Cannot load fixture initial-data.yml: while parsing a block mapping
+ in 'string', line 32, column 3:
+      title:          About the model  ... 
+      ^
+expected <block end>, but found Scalar
+ in 'string', line 45, column 5:
+        business situation, and business ... 
+        ^
+
+	at play.test.Fixtures.loadModels(Fixtures.java:301)
+	at play.test.Fixtures.loadModels(Fixtures.java:192)
+	at Bootstrap.doJob(Bootstrap.java:12)
+	at play.jobs.Job.doJobWithResult(Job.java:64)
+	at play.jobs.Job$2.apply(Job.java:224)
+	at play.db.jpa.JPA.withTransaction(JPA.java:285)
+	at play.db.jpa.JPA.withinFilter(JPA.java:238)
+	at play.db.jpa.JPAPlugin$TransactionalFilter.withinFilter(JPAPlugin.java:304)
+	at play.jobs.Job.withinFilter(Job.java:201)
+	at play.jobs.Job.call(Job.java:220)
+	... 1 more
+Caused by: while parsing a block mapping
+ in 'string', line 32, column 3:
+      title:          About the model  ... 
+      ^
+expected <block end>, but found Scalar
+ in 'string', line 45, column 5:
+        business situation, and business ... 
+        ^
+
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseBlockMappingKey.produce(ParserImpl.java:569)
+	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:157)
+	at org.yaml.snakeyaml.parser.ParserImpl.checkEvent(ParserImpl.java:147)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:224)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:155)
+	at org.yaml.snakeyaml.composer.Composer.composeValueNode(Composer.java:246)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingChildren(Composer.java:237)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:225)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:155)
+	at org.yaml.snakeyaml.composer.Composer.composeDocument(Composer.java:122)
+	at org.yaml.snakeyaml.composer.Composer.getSingleNode(Composer.java:105)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.getSingleData(BaseConstructor.java:120)
+	at org.yaml.snakeyaml.Yaml.loadFromReader(Yaml.java:450)
+	at org.yaml.snakeyaml.Yaml.load(Yaml.java:369)
+	at play.test.Fixtures.loadModels(Fixtures.java:230)
+	... 10 more
+14 七月 2019 19:34:21,633 ERROR ~ 
+
+@7cfoo7pkk
+Internal Server Error (500) for request GET /
+
+Oops: RuntimeException
+Unexpected error : Unexpected Error, caused by exception RuntimeException: Cannot load fixture initial-data.yml: while parsing a block mapping  in 'string', line 32, column 3:       title:          About the model  ...        ^ expected <block end>, but found Scalar  in 'string', line 45, column 5:         business situation, and business ...          ^ 
+
+play.exceptions.UnexpectedException: Unexpected Error
+	at play.jobs.Job.onException(Job.java:180)
+	at play.jobs.Job.call(Job.java:250)
+	at Invocation.Job(Play!)
+Caused by: java.lang.RuntimeException: Cannot load fixture initial-data.yml: while parsing a block mapping
+ in 'string', line 32, column 3:
+      title:          About the model  ... 
+      ^
+expected <block end>, but found Scalar
+ in 'string', line 45, column 5:
+        business situation, and business ... 
+        ^
+
+	at play.test.Fixtures.loadModels(Fixtures.java:301)
+	at play.test.Fixtures.loadModels(Fixtures.java:192)
+	at Bootstrap.doJob(Bootstrap.java:12)
+	at play.jobs.Job.doJobWithResult(Job.java:64)
+	at play.jobs.Job$2.apply(Job.java:224)
+	at play.db.jpa.JPA.withTransaction(JPA.java:285)
+	at play.db.jpa.JPA.withinFilter(JPA.java:238)
+	at play.db.jpa.JPAPlugin$TransactionalFilter.withinFilter(JPAPlugin.java:304)
+	at play.jobs.Job.withinFilter(Job.java:201)
+	at play.jobs.Job.call(Job.java:220)
+	... 1 more
+Caused by: while parsing a block mapping
+ in 'string', line 32, column 3:
+      title:          About the model  ... 
+      ^
+expected <block end>, but found Scalar
+ in 'string', line 45, column 5:
+        business situation, and business ... 
+        ^
+
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseBlockMappingKey.produce(ParserImpl.java:569)
+	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:157)
+	at org.yaml.snakeyaml.parser.ParserImpl.checkEvent(ParserImpl.java:147)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:224)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:155)
+	at org.yaml.snakeyaml.composer.Composer.composeValueNode(Composer.java:246)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingChildren(Composer.java:237)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:225)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:155)
+	at org.yaml.snakeyaml.composer.Composer.composeDocument(Composer.java:122)
+	at org.yaml.snakeyaml.composer.Composer.getSingleNode(Composer.java:105)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.getSingleData(BaseConstructor.java:120)
+	at org.yaml.snakeyaml.Yaml.loadFromReader(Yaml.java:450)
+	at org.yaml.snakeyaml.Yaml.load(Yaml.java:369)
+	at play.test.Fixtures.loadModels(Fixtures.java:230)
+	... 10 more
+14 七月 2019 19:39:14,216 ERROR ~ Restart: The play Cache is not alive (STATUS_SHUTDOWN)
+java.lang.IllegalStateException: The play Cache is not alive (STATUS_SHUTDOWN)
+	at net.sf.ehcache.Cache$CacheStatus.checkAlive(Cache.java:4104)
+	at net.sf.ehcache.Cache.checkStatus(Cache.java:2792)
+	at net.sf.ehcache.Cache.removeAll(Cache.java:2518)
+	at net.sf.ehcache.Cache.removeAll(Cache.java:2504)
+	at play.cache.EhCacheImpl.clear(EhCacheImpl.java:58)
+	at play.cache.Cache.clear(Cache.java:209)
+	at play.classloading.ApplicationClassloader.detectChanges(ApplicationClassloader.java:350)
+	at play.Play.detectChanges(Play.java:663)
+	at play.Invoker$Invocation.init(Invoker.java:220)
+	at Invocation.HTTP Request(Play!)
+14 七月 2019 19:39:14,706 ERROR ~ 
+
+@7cfoo7pkl
+Error during job execution (Bootstrap)
+
+Execution exception (In /app/Bootstrap.java around line 12)
+RuntimeException occurred : Cannot load fixture initial-data.yml[type=models.User,id=bob]: Cannot load fixture initial-data.yml, duplicate id 'bob' for type models.User
+
+play.exceptions.JavaExecutionException: Cannot load fixture initial-data.yml[type=models.User,id=bob]: Cannot load fixture initial-data.yml, duplicate id 'bob' for type models.User
+	at play.jobs.Job.call(Job.java:241)
+	at Invocation.Job(Play!)
+Caused by: java.lang.RuntimeException: Cannot load fixture initial-data.yml[type=models.User,id=bob]: Cannot load fixture initial-data.yml, duplicate id 'bob' for type models.User
+	at play.test.Fixtures.loadModels(Fixtures.java:301)
+	at play.test.Fixtures.loadModels(Fixtures.java:192)
+	at Bootstrap.doJob(Bootstrap.java:12)
+	at play.jobs.Job.doJobWithResult(Job.java:64)
+	at play.jobs.Job$2.apply(Job.java:224)
+	at play.db.jpa.JPA.withTransaction(JPA.java:285)
+	at play.db.jpa.JPA.withinFilter(JPA.java:238)
+	at play.db.jpa.JPAPlugin$TransactionalFilter.withinFilter(JPAPlugin.java:304)
+	at play.jobs.Job.withinFilter(Job.java:201)
+	at play.jobs.Job.call(Job.java:220)
+	... 1 more
+Caused by: java.lang.RuntimeException: Cannot load fixture initial-data.yml, duplicate id 'bob' for type models.User
+	at play.test.Fixtures.loadModels(Fixtures.java:248)
+	... 10 more
+14 七月 2019 19:39:14,733 ERROR ~ 
+
+@7cfoo7pkm
+Internal Server Error (500) for request GET /
+
+Oops: RuntimeException
+Unexpected error : Unexpected Error, caused by exception RuntimeException: Cannot load fixture initial-data.yml[type=models.User,id=bob]: Cannot load fixture initial-data.yml, duplicate id 'bob' for type models.User
+
+play.exceptions.UnexpectedException: Unexpected Error
+	at play.jobs.Job.onException(Job.java:180)
+	at play.jobs.Job.call(Job.java:250)
+	at Invocation.Job(Play!)
+Caused by: java.lang.RuntimeException: Cannot load fixture initial-data.yml[type=models.User,id=bob]: Cannot load fixture initial-data.yml, duplicate id 'bob' for type models.User
+	at play.test.Fixtures.loadModels(Fixtures.java:301)
+	at play.test.Fixtures.loadModels(Fixtures.java:192)
+	at Bootstrap.doJob(Bootstrap.java:12)
+	at play.jobs.Job.doJobWithResult(Job.java:64)
+	at play.jobs.Job$2.apply(Job.java:224)
+	at play.db.jpa.JPA.withTransaction(JPA.java:285)
+	at play.db.jpa.JPA.withinFilter(JPA.java:238)
+	at play.db.jpa.JPAPlugin$TransactionalFilter.withinFilter(JPAPlugin.java:304)
+	at play.jobs.Job.withinFilter(Job.java:201)
+	at play.jobs.Job.call(Job.java:220)
+	... 1 more
+Caused by: java.lang.RuntimeException: Cannot load fixture initial-data.yml, duplicate id 'bob' for type models.User
+	at play.test.Fixtures.loadModels(Fixtures.java:248)
+	... 10 more
+14 七月 2019 19:39:24,237 ERROR ~ 
+
+@7cfoo7pkn
+Error during job execution (Bootstrap)
+
+Execution exception (In /app/Bootstrap.java around line 12)
+RuntimeException occurred : Cannot load fixture initial-data.yml[type=models.User,id=bob]: Cannot load fixture initial-data.yml, duplicate id 'bob' for type models.User
+
+play.exceptions.JavaExecutionException: Cannot load fixture initial-data.yml[type=models.User,id=bob]: Cannot load fixture initial-data.yml, duplicate id 'bob' for type models.User
+	at play.jobs.Job.call(Job.java:241)
+	at Invocation.Job(Play!)
+Caused by: java.lang.RuntimeException: Cannot load fixture initial-data.yml[type=models.User,id=bob]: Cannot load fixture initial-data.yml, duplicate id 'bob' for type models.User
+	at play.test.Fixtures.loadModels(Fixtures.java:301)
+	at play.test.Fixtures.loadModels(Fixtures.java:192)
+	at Bootstrap.doJob(Bootstrap.java:12)
+	at play.jobs.Job.doJobWithResult(Job.java:64)
+	at play.jobs.Job$2.apply(Job.java:224)
+	at play.db.jpa.JPA.withTransaction(JPA.java:285)
+	at play.db.jpa.JPA.withinFilter(JPA.java:238)
+	at play.db.jpa.JPAPlugin$TransactionalFilter.withinFilter(JPAPlugin.java:304)
+	at play.jobs.Job.withinFilter(Job.java:201)
+	at play.jobs.Job.call(Job.java:220)
+	... 1 more
+Caused by: java.lang.RuntimeException: Cannot load fixture initial-data.yml, duplicate id 'bob' for type models.User
+	at play.test.Fixtures.loadModels(Fixtures.java:248)
+	... 10 more
+14 七月 2019 19:39:24,261 ERROR ~ 
+
+@7cfoo7pko
+Internal Server Error (500) for request GET /
+
+Oops: RuntimeException
+Unexpected error : Unexpected Error, caused by exception RuntimeException: Cannot load fixture initial-data.yml[type=models.User,id=bob]: Cannot load fixture initial-data.yml, duplicate id 'bob' for type models.User
+
+play.exceptions.UnexpectedException: Unexpected Error
+	at play.jobs.Job.onException(Job.java:180)
+	at play.jobs.Job.call(Job.java:250)
+	at Invocation.Job(Play!)
+Caused by: java.lang.RuntimeException: Cannot load fixture initial-data.yml[type=models.User,id=bob]: Cannot load fixture initial-data.yml, duplicate id 'bob' for type models.User
+	at play.test.Fixtures.loadModels(Fixtures.java:301)
+	at play.test.Fixtures.loadModels(Fixtures.java:192)
+	at Bootstrap.doJob(Bootstrap.java:12)
+	at play.jobs.Job.doJobWithResult(Job.java:64)
+	at play.jobs.Job$2.apply(Job.java:224)
+	at play.db.jpa.JPA.withTransaction(JPA.java:285)
+	at play.db.jpa.JPA.withinFilter(JPA.java:238)
+	at play.db.jpa.JPAPlugin$TransactionalFilter.withinFilter(JPAPlugin.java:304)
+	at play.jobs.Job.withinFilter(Job.java:201)
+	at play.jobs.Job.call(Job.java:220)
+	... 1 more
+Caused by: java.lang.RuntimeException: Cannot load fixture initial-data.yml, duplicate id 'bob' for type models.User
+	at play.test.Fixtures.loadModels(Fixtures.java:248)
+	... 10 more
+14 七月 2019 19:39:25,564 ERROR ~ 
+
+@7cfoo7pkp
+Error during job execution (Bootstrap)
+
+Execution exception (In /app/Bootstrap.java around line 12)
+RuntimeException occurred : Cannot load fixture initial-data.yml[type=models.User,id=bob]: Cannot load fixture initial-data.yml, duplicate id 'bob' for type models.User
+
+play.exceptions.JavaExecutionException: Cannot load fixture initial-data.yml[type=models.User,id=bob]: Cannot load fixture initial-data.yml, duplicate id 'bob' for type models.User
+	at play.jobs.Job.call(Job.java:241)
+	at Invocation.Job(Play!)
+Caused by: java.lang.RuntimeException: Cannot load fixture initial-data.yml[type=models.User,id=bob]: Cannot load fixture initial-data.yml, duplicate id 'bob' for type models.User
+	at play.test.Fixtures.loadModels(Fixtures.java:301)
+	at play.test.Fixtures.loadModels(Fixtures.java:192)
+	at Bootstrap.doJob(Bootstrap.java:12)
+	at play.jobs.Job.doJobWithResult(Job.java:64)
+	at play.jobs.Job$2.apply(Job.java:224)
+	at play.db.jpa.JPA.withTransaction(JPA.java:285)
+	at play.db.jpa.JPA.withinFilter(JPA.java:238)
+	at play.db.jpa.JPAPlugin$TransactionalFilter.withinFilter(JPAPlugin.java:304)
+	at play.jobs.Job.withinFilter(Job.java:201)
+	at play.jobs.Job.call(Job.java:220)
+	... 1 more
+Caused by: java.lang.RuntimeException: Cannot load fixture initial-data.yml, duplicate id 'bob' for type models.User
+	at play.test.Fixtures.loadModels(Fixtures.java:248)
+	... 10 more
+14 七月 2019 19:39:25,602 ERROR ~ 
+
+@7cfoo7pl0
+Internal Server Error (500) for request GET /
+
+Oops: RuntimeException
+Unexpected error : Unexpected Error, caused by exception RuntimeException: Cannot load fixture initial-data.yml[type=models.User,id=bob]: Cannot load fixture initial-data.yml, duplicate id 'bob' for type models.User
+
+play.exceptions.UnexpectedException: Unexpected Error
+	at play.jobs.Job.onException(Job.java:180)
+	at play.jobs.Job.call(Job.java:250)
+	at Invocation.Job(Play!)
+Caused by: java.lang.RuntimeException: Cannot load fixture initial-data.yml[type=models.User,id=bob]: Cannot load fixture initial-data.yml, duplicate id 'bob' for type models.User
+	at play.test.Fixtures.loadModels(Fixtures.java:301)
+	at play.test.Fixtures.loadModels(Fixtures.java:192)
+	at Bootstrap.doJob(Bootstrap.java:12)
+	at play.jobs.Job.doJobWithResult(Job.java:64)
+	at play.jobs.Job$2.apply(Job.java:224)
+	at play.db.jpa.JPA.withTransaction(JPA.java:285)
+	at play.db.jpa.JPA.withinFilter(JPA.java:238)
+	at play.db.jpa.JPAPlugin$TransactionalFilter.withinFilter(JPAPlugin.java:304)
+	at play.jobs.Job.withinFilter(Job.java:201)
+	at play.jobs.Job.call(Job.java:220)
+	... 1 more
+Caused by: java.lang.RuntimeException: Cannot load fixture initial-data.yml, duplicate id 'bob' for type models.User
+	at play.test.Fixtures.loadModels(Fixtures.java:248)
+	... 10 more
+14 七月 2019 19:39:29,256 ERROR ~ 
+
+@7cfoo7pl1
+Error during job execution (Bootstrap)
+
+Execution exception (In /app/Bootstrap.java around line 12)
+RuntimeException occurred : Cannot load fixture initial-data.yml[type=models.User,id=bob]: Cannot load fixture initial-data.yml, duplicate id 'bob' for type models.User
+
+play.exceptions.JavaExecutionException: Cannot load fixture initial-data.yml[type=models.User,id=bob]: Cannot load fixture initial-data.yml, duplicate id 'bob' for type models.User
+	at play.jobs.Job.call(Job.java:241)
+	at Invocation.Job(Play!)
+Caused by: java.lang.RuntimeException: Cannot load fixture initial-data.yml[type=models.User,id=bob]: Cannot load fixture initial-data.yml, duplicate id 'bob' for type models.User
+	at play.test.Fixtures.loadModels(Fixtures.java:301)
+	at play.test.Fixtures.loadModels(Fixtures.java:192)
+	at Bootstrap.doJob(Bootstrap.java:12)
+	at play.jobs.Job.doJobWithResult(Job.java:64)
+	at play.jobs.Job$2.apply(Job.java:224)
+	at play.db.jpa.JPA.withTransaction(JPA.java:285)
+	at play.db.jpa.JPA.withinFilter(JPA.java:238)
+	at play.db.jpa.JPAPlugin$TransactionalFilter.withinFilter(JPAPlugin.java:304)
+	at play.jobs.Job.withinFilter(Job.java:201)
+	at play.jobs.Job.call(Job.java:220)
+	... 1 more
+Caused by: java.lang.RuntimeException: Cannot load fixture initial-data.yml, duplicate id 'bob' for type models.User
+	at play.test.Fixtures.loadModels(Fixtures.java:248)
+	... 10 more
+14 七月 2019 19:39:29,296 ERROR ~ 
+
+@7cfoo7pl2
+Internal Server Error (500) for request GET /
+
+Oops: RuntimeException
+Unexpected error : Unexpected Error, caused by exception RuntimeException: Cannot load fixture initial-data.yml[type=models.User,id=bob]: Cannot load fixture initial-data.yml, duplicate id 'bob' for type models.User
+
+play.exceptions.UnexpectedException: Unexpected Error
+	at play.jobs.Job.onException(Job.java:180)
+	at play.jobs.Job.call(Job.java:250)
+	at Invocation.Job(Play!)
+Caused by: java.lang.RuntimeException: Cannot load fixture initial-data.yml[type=models.User,id=bob]: Cannot load fixture initial-data.yml, duplicate id 'bob' for type models.User
+	at play.test.Fixtures.loadModels(Fixtures.java:301)
+	at play.test.Fixtures.loadModels(Fixtures.java:192)
+	at Bootstrap.doJob(Bootstrap.java:12)
+	at play.jobs.Job.doJobWithResult(Job.java:64)
+	at play.jobs.Job$2.apply(Job.java:224)
+	at play.db.jpa.JPA.withTransaction(JPA.java:285)
+	at play.db.jpa.JPA.withinFilter(JPA.java:238)
+	at play.db.jpa.JPAPlugin$TransactionalFilter.withinFilter(JPAPlugin.java:304)
+	at play.jobs.Job.withinFilter(Job.java:201)
+	at play.jobs.Job.call(Job.java:220)
+	... 1 more
+Caused by: java.lang.RuntimeException: Cannot load fixture initial-data.yml, duplicate id 'bob' for type models.User
+	at play.test.Fixtures.loadModels(Fixtures.java:248)
+	... 10 more

@@ -9,6 +9,7 @@ import javax.persistence.*;
 @Entity
 public class User extends Model {
 
+
     @Email
     @Required
     public String email;

@@ -47,6 +47,7 @@ body {
 #tools a {
     color: #fff;
     text-decoration: none;
+
 }
 
 #title {
@@ -362,7 +363,7 @@ form label {
 }
 
 #footer a {
-    color: #869AB1;
+    color: #cb00ff;
     font-weight: bold;
 }
 

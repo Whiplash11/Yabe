@@ -19,8 +19,8 @@ public class Admin extends Controller {
     }
 
     public static void index(){
-        String user = Security.connected();
-        List<Post> posts = Post.find("author.email",user).fetch();
+        String username = Security.connected();
+        List<Post> posts = Post.find("author.email",username).fetch();
         render(posts);
     }
     public static void form(Long id){
@@ -54,5 +54,6 @@ public class Admin extends Controller {
         post.save();
         index();
     }
+
 }
 
